@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-//********************************************************************
+// *******************************************************************
 //                  Pinsoe Gustave
 //
 //              Program #1 due 09/1/2026
@@ -10,8 +10,8 @@ import java.util.Scanner;
 //               are put back face down to be drawn again.
 // *******************************************************************
 public class Program1 {
-    private static final int SIZE = 4;
-    private static final int PAIRS = 8;
+    private static final int size = 4;
+    private static final int pairs = 8;
     private static char[][] board;
     private static int[][] cards;
     private static boolean[][] faceUp;
@@ -30,22 +30,22 @@ public class Program1 {
     }
 
     private static void initializeGame() {
-        board = new char[SIZE][SIZE];
-        cards = new int[SIZE][SIZE];
-        faceUp = new boolean[SIZE][SIZE];
+        board = new char[size][size];
+        cards = new int[size][size];
+        faceUp = new boolean[size][size];
         matchesFound = 0;
 
-//        Initialize the board with face down cards
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
+//        Initialize the board with face down SIZEcards
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 board[i][j] = '*';
                 faceUp[i][j] = false;
             }
         }
 
 //        Create pairs of cards
-        int[] cardValues = new int[SIZE * SIZE];
-        for (int i = 0; i < PAIRS; i++) {
+        int[] cardValues = new int[size * size];
+        for (int i = 0; i < pairs; i++) {
             cardValues[i * 2] = i + 1;
             cardValues[i * 2 + 1] = i + 1;
         }
@@ -60,25 +60,23 @@ public class Program1 {
 
 //        Move shuffled cards to the grid
         int index = 0;
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 cards[i][j] = cardValues[index++];
             }
         }
     }
 
     private static void playGame() {
-        while (matchesFound < PAIRS) {
+        while (matchesFound < pairs) {
 
-            clearScreen();
             displayBoard();
 
-            System.out.println("Match "+ (matchesFound + 1) + " of " + PAIRS);
+            System.out.println("Match "+ (matchesFound + 1) + " of " + pairs);
             System.out.println("Enter your first card coordinates(row, column): ");
             int[] first = getCoordinates();
 
             board[first[0]][first[1]] = (char)(cards[first[0]][first[1]] + '0');
-            clearScreen();
             displayBoard();
 
             System.out.println("Enter your second card coordinates(row, column): ");
@@ -86,7 +84,6 @@ public class Program1 {
 
 //            Turn second card faceUp
             board[second[0]][second[1]] = (char)(cards[second[0]][second[1]] + '0');
-            clearScreen();
             displayBoard();
 
 //            Check if they match
@@ -106,7 +103,6 @@ public class Program1 {
                 scanner.nextLine();
             }
         }
-        clearScreen();
         displayBoard();
         System.out.println("You won!! All pairs are matched!");
     }
@@ -121,7 +117,7 @@ public class Program1 {
                     row = Integer.parseInt(parts[0]) - 1;
                     col = Integer.parseInt(parts[1]) - 1;
 
-                    if(row >= 0 && row < SIZE && col >= 0 && col < SIZE) {
+                    if(row >= 0 && row < size && col >= 0 && col < size) {
                         if (!faceUp[row][col]) {
                             if (board[row][col] == '*') {
                                 return new int[]{row, col};
@@ -152,9 +148,9 @@ public class Program1 {
 
     private static void displayBoard() {
         System.out.println(" " + "1 2 3 4");
-        for (int i = 0; i < SIZE; i++) {
+        for (int i = 0; i < size; i++) {
             System.out.println((i + 1) + " ");
-            for (int j = 0; j < SIZE; j++) {
+            for (int j = 0; j < size; j++) {
                 if (faceUp[i][j]) {
                     System.out.println(cards[i][j] + " ");
                 } else {
@@ -166,10 +162,4 @@ public class Program1 {
         System.out.println();
     }
 
-    private static void clearScreen() {
-//        clearing the screen
-        for (int i = 0; i < 30; i++) {
-            System.out.println();
-        }
-    }
 }
