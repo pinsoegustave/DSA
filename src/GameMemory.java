@@ -2,9 +2,8 @@
 //                  Pinsoe Gustave
 //
 //              Program #1 due 09/1/2026
-//     This program considers a memory matching game that uses 16 cards
-//          at the same time have to match to stay faced up, if not they
-//               are put back face down to be drawn again.
+//     This file contains the memory of the game, board methods, player
+//          methods, and the core functions of the game.
 // *******************************************************************
 
 import java.util.Random;
