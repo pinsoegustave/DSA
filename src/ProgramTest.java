@@ -9,7 +9,7 @@ import java.util.Scanner;
 //          at the same time have to match to stay faced up, if not they
 //               are put back face down to be drawn again.
 // *******************************************************************
-public class Program1 {
+public class ProgramTest {
     private static final int size = 4;
     private static final int pairs = 8;
     private static char[][] board;
