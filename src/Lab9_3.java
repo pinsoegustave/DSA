@@ -8,19 +8,37 @@ public class Lab9_3 {
         System.out.println(a);
         System.out.println(b);
         System.out.println(c);
+
+        a.k = 31;
+        a.m = 32;
+        a.n = 33;
+//        a.p = 34;
+
+        b.k = 41;
+        b.m = 42;
+        b.n = 43;
+//        b.p = 44;
+
+        c.k = 51;
+        c.m = 52;
+        c.n = 53;
+
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
     }
 }
 
-    class A {
-        public int k = 1;
-        int m = 2;    // package
-        protected int n = 3;
-        private int p = 4;
-
-        public String toString() {
-            return "A: k = " + k + " n = " + n + " m = " + m + " p = " + p;
-        }
-    }
+//    class A {
+//        public int k = 1;
+//        int m = 2;    // package
+//        protected int n = 3;
+//        private int p = 4;
+//
+//        public String toString() {
+//            return "A: k = " + k + " n = " + n + " m = " + m + " p = " + p;
+//        }
+//    }
 
     class B extends A {
         public int k = 11;
