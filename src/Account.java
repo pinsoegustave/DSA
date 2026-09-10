@@ -7,6 +7,10 @@ public class Account {
         Sbalance = balance;
     }
 
+    public void showBalance() {
+        System.out.printf("%s: Your balance = $%.2f%n", name, balance);
+    }
+
     public String getName() {
         return name;
     }
@@ -33,7 +37,12 @@ public class Account {
         return String.format("%s: Your balance = $%.2f", name, balance);
     }
 
-//    Override
-
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Account other)) {
+            return false;
+        }
+        return name.equals(other.name) && this.balance == other.balance;
+    }
 
 }

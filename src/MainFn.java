@@ -11,7 +11,8 @@ public class MainFn {
 
         Account account = bank.find(name);
         if (account == null) {
-            account = new Account(name, )
+            account = new Account(name, 100.00);
+            bank.addAccount(account);
         }
 
         double totalDeposits = 0.00;
@@ -29,7 +30,6 @@ public class MainFn {
                 System.out.println("Enter the amount: ");
                 double amount = input.nextDouble();
                 account.deposit(amount);
-                totalDeposits = totalDeposits + amount;
             }
             else if (choice == 2) {
                 System.out.println("Enter the amount: ");
