@@ -1,29 +1,59 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+// *******************************************************************
+//                  Pinsoe Gustave
+//
+//              Program #2 due 09/10/2026
+//     This is the main program file that helps to run the whole bank system.
+//          Its function is to run the whole system so that the users can
+//               access their bank accounts and information.
+// *******************************************************************
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-//            double result = 8.0 / 3.0;
-//        int m = 2;
-//        int n = 3;
-//        int p = 4;
-//        int q = 5;
-//        double r = 6;
-//
-//        System.out.println(m + n);
-//        System.out.println(p * q);
-//        System.out.println(m + n + r);
-//        System.out.println(p * q * m);
-//        System.out.println(r - m);
+        Scanner input = new Scanner(System.in);
 
-//        double result = 7.0 / 2 * 3 % 2;
-        int k = 3;
-        int j = 4;
-        int m  = 5;
+        Bank bank = new Bank(10);
 
-        m *= ++j + ++k;
+        System.out.println("Enter your name please: ");
+        String name = input.nextLine();
 
-        System.out.println(k);
-        System.out.println(j);
-        System.out.println(m);
+//        condition to check if there is similar account
+        Account account = bank.find(name);
+        if (account == null) {
+            account = new Account(name, 100.00);
+            bank.addAccount(account);
         }
+
+        int choice = 0;
+//        main while loop
+        while (choice != 4) {
+            System.out.println("1. Deposit");
+            System.out.println("2. Withdraw");
+            System.out.println("3. Show my balance");
+            System.out.println("4. Exit");
+            System.out.println("Enter your choice please: ");
+
+            choice = input.nextInt();
+
+            if (choice == 1) {
+                System.out.println("Enter the amount: ");
+                double amount = input.nextDouble();
+                account.deposit(amount);
+            }
+            else if (choice == 2) {
+                System.out.println("Enter the amount: ");
+                double amount = input.nextDouble();
+                if (!account.withdraw(amount)){
+                    System.out.println("Not enough money for the withdrawal.");
+                }
+            }
+            else if (choice == 3) {
+                account.showBalance();
+            } else if (choice == 4) {
+                bank.printTotal();
+            }
+        }
+        input.close();
     }
+}
