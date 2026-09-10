@@ -1,3 +1,12 @@
+// *******************************************************************
+//                  Pinsoe Gustave
+//
+//              Program #2 due 09/10/2026
+//     This bank file helps with the general information of the bank system.
+//        It has methods like find to help with preventing accounts with
+//          same names, and showing the total deposits of the user.
+// *******************************************************************
+
 public class Bank {
     private Account[] accounts;
     private int count;
@@ -28,7 +37,7 @@ public class Bank {
             System.out.println("Bank is full - cannot add account.");
         }
     }
-
+//    Method to print the total deposits in a session
     public void printTotal() {
         double total = 0.0;
         for (int i = 0; i < count; i++) {

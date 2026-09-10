@@ -1,3 +1,12 @@
+// *******************************************************************
+//                  Pinsoe Gustave
+//
+//              Program #2 due 09/10/2026
+//     This is the main program file that helps to run the whole bank system.
+//          Its function is to run the whole system so that the users can
+//               access their bank accounts and information.
+// *******************************************************************
+
 import java.util.Scanner;
 
 public class MainFn {
@@ -9,15 +18,15 @@ public class MainFn {
         System.out.println("Enter your name please: ");
         String name = input.nextLine();
 
+//        condition to check if there is similar account
         Account account = bank.find(name);
         if (account == null) {
             account = new Account(name, 100.00);
             bank.addAccount(account);
         }
 
-        double totalDeposits = 0.00;
         int choice = 0;
-
+//        main while loop
         while (choice != 4) {
             System.out.println("1. Deposit");
             System.out.println("2. Withdraw");

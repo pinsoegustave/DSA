@@ -1,3 +1,12 @@
+// *******************************************************************
+//                  Pinsoe Gustave
+//
+//              Program #2 due 09/10/2026
+//     This file contains Account functions that a user can do with their
+//         account. It contains methods to show the user their balance,
+//            adding money to their account, as well as withdrawing.
+// *******************************************************************
+
 public class Account {
     private String name;
     private double balance;
@@ -7,12 +16,13 @@ public class Account {
         balance = argBalance;
     }
 
+//    Method to print the balance of the user
     public void showBalance() {
         System.out.printf("%s: Your balance = $%.2f%n", name, balance);
     }
 
+//    Getter method to help access the user's name.
     public String getName() {
-
         return name;
     }
 
@@ -25,6 +35,7 @@ public class Account {
         balance = balance + amount;
     }
 
+//    Method to help on withdraw function
     public boolean withdraw(double amount) {
         if (amount > balance) {
             return false;
@@ -34,9 +45,8 @@ public class Account {
         return true;
     }
 
-    @Override
+//    toString method to help print balance message
     public String toString() {
-
         return String.format("%s: Your balance = $%.2f", name, balance);
     }
 
