@@ -2,9 +2,9 @@ public class Account {
     private String name;
     private double balance;
 
-    public Account (String Sname, double Sbalance) {
-        Sname = name;
-        Sbalance = balance;
+    public Account (String argName, double argBalance) {
+        name = argName;
+        balance = argBalance;
     }
 
     public void showBalance() {
@@ -12,6 +12,7 @@ public class Account {
     }
 
     public String getName() {
+
         return name;
     }
 
@@ -20,6 +21,7 @@ public class Account {
     }
 
     public void deposit(double amount) {
+
         balance = balance + amount;
     }
 
@@ -34,6 +36,7 @@ public class Account {
 
     @Override
     public String toString() {
+
         return String.format("%s: Your balance = $%.2f", name, balance);
     }
 

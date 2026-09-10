@@ -23,6 +23,7 @@ public class MainFn {
             System.out.println("2. Withdraw");
             System.out.println("3. Show my balance");
             System.out.println("4. Exit");
+            System.out.println("Enter your choice please: ");
 
             choice = input.nextInt();
 

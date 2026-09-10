@@ -34,7 +34,7 @@ public class Bank {
         for (int i = 0; i < count; i++) {
             total = total + accounts[i].getBalance();
         }
-        System.out.printf("Total Accounts: $%.2f%n", total);
+        System.out.printf("All deposits in the bank: $%.2f%n", total);
     }
 
 }
