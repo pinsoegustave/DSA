@@ -1,3 +1,12 @@
+//************************************************************
+//                     Pinsoe Gustave
+//                       Program #6
+//                     Due 11/03/2026
+// This program translates morse code into normal English
+//       language using Binary Search Tree. This is the
+//         driver file to run the whole program.
+//************************************************************
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

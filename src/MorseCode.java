@@ -1,4 +1,11 @@
-
+//************************************************************
+//                     Pinsoe Gustave
+//                       Program #6
+//                     Due 11/03/2026
+// This program translates morse code into normal English
+//       language using Binary Search Tree. This file
+//         contains methods to decode the morse code.
+//************************************************************
 public class MorseCode extends BST<Character> {
 
     public Character[] letter = {
@@ -18,7 +25,7 @@ public class MorseCode extends BST<Character> {
         }
     }
 
-    private void incodeText(Character letter, String morseCode) {
+    public void incodeText(Character letter, String morseCode) {
         if (root == null) {
             root = new BSTNode<Character>(null);
         }
@@ -47,14 +54,14 @@ public class MorseCode extends BST<Character> {
         BSTNode<Character> p = root;
 
         for (int c = 0; c < morseCode.length(); c++) {
-            char xcode = morseCode.charAt(c);
+            char ch = morseCode.charAt(c);
 
-            if (xcode == '.') {
+            if (ch == '.') {
                 if (p.right == null) {
                     return null;
                 }
                 p = p.right;
-            } else if (xcode == '-') {
+            } else if (ch == '-') {
                 if (p.left == null) {
                     return null;
                 }
