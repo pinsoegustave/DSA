@@ -13,10 +13,11 @@ public class MorseDriver {
         try {
             input = new Scanner(new FileInputStream("Morse.txt"));
         } catch (FileNotFoundException f) {
-            System.out.println("Error opening file.");
+            System.out.println("Error opening (Morse.txt) file.");
             System.exit(0);
         }
 
+//       this block creates a new file(English.txt) to store the decoded words
         try {
             output = new PrintStream(new FileOutputStream("English.txt"));
         } catch (FileNotFoundException f) {
@@ -32,7 +33,9 @@ public class MorseDriver {
                 continue;
             }
 
+            // split the string and stores each char in any array
             String[] codes = text.split(" ");
+
             for (int i = 0; i < codes.length; i++) {
                 String code = codes[i];
 
@@ -42,13 +45,6 @@ public class MorseDriver {
                     output.print(dec);
                 }
             }
-//            String[] codes = text.split("\\s+");
-//            for (String code : codes) {
-//                Character dec = mc.decodeText(code);
-//                if (dec != null) {
-//                    output.print(dec);
-//                }
-//            }
             output.println();
         }
         input.close();
