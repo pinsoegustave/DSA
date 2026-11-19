@@ -2,10 +2,10 @@ import java.util.Arrays;
 
 public class CrossReference {
     int size = 100;
-    CRHashingWord[] table;
+    Word[] table;
 
     public CrossReference() {
-        table = new CRHashingWord[size];
+        table = new Word[size];
     }
 
     public int hash(String str) {
@@ -22,7 +22,7 @@ public class CrossReference {
 
         while (true) {
             if (table[i] == null) {
-                table[i] = new CRHashingWord(str, line);
+                table[i] = new Word(str, line);
                 return;
             }
 
@@ -51,7 +51,7 @@ public class CrossReference {
             }
         }
 
-        CRHashingWord[] sortedWords = new CRHashingWord[count];
+        Word[] sortedWords = new Word[count];
         int c = 0;
 
         for (int d = 0; d < size; d++) {
@@ -62,8 +62,6 @@ public class CrossReference {
         }
         Arrays.sort(sortedWords);
 
-        for (CRHashingWord word : sortedWords) {
-            System.out.println(word);
-        }
+        System.out.println(Arrays.toString(sortedWords));
     }
 }

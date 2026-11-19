@@ -21,7 +21,7 @@ public class CRMain {
             String[] splitWords = line.split(" ");
 
             for(String split : splitWords) {
-                if (split.length()>0) {
+                if (!split.isEmpty()) {
                     String word = split.toLowerCase();
                     c.insert(word, lineNumber);
                 }
