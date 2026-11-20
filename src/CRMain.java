@@ -3,8 +3,8 @@
 //                       Program #7
 //                     Due 11/19/2026
 // This main program file that reads words line by line from the
-//      input file(Hash.txt)
-//     into the hash table, and prints the sorted result.
+//   input file(Hash.txt), perform all actions (hash, sort and
+//     insert into the hash table) and prints the final hash table.
 //************************************************************
 
 import java.io.FileInputStream;
