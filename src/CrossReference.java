@@ -1,3 +1,11 @@
+//************************************************************
+//                     Pinsoe Gustave
+//                       Program #7
+//                     Due 11/19/2026
+//   This file contains the hash, insert, and sort methods that
+//      will help going through the file, hash them, sort in
+//        alphabetical order, and insert them to the table.
+//************************************************************
 import java.util.Arrays;
 
 public class CrossReference {
@@ -8,14 +16,15 @@ public class CrossReference {
         table = new Word[size];
     }
 
+//    method for hashing each word before being added to the array table
     public int hash(String str) {
         int total = 0;
         for (int a = 0; a < str.length(); a++) {
-            total += str.charAt(a);
+            total += (int) str.charAt(a);
         }
         return total % size;
     }
-
+//    method to insert the words into the array table
     public void insert(String str, int line) {
         int i = hash(str);
         int start = i;
@@ -42,7 +51,7 @@ public class CrossReference {
             }
         }
     }
-
+//    method to sort the words before inserting them into the array table
     public void sort() {
         int count = 0;
         for (int b = 0; b < size; b++) {

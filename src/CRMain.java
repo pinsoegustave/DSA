@@ -1,3 +1,12 @@
+//************************************************************
+//                     Pinsoe Gustave
+//                       Program #7
+//                     Due 11/19/2026
+// This main program file that reads words line by line from the
+//      input file(Hash.txt)
+//     into the hash table, and prints the sorted result.
+//************************************************************
+
 import java.io.FileInputStream;
 import java.util.Scanner;
 
@@ -7,15 +16,17 @@ public class CRMain {
         String fileName = "Hash.txt";
         Scanner inputStream = null;
 
+//        block for file reading
         try {
             inputStream = new Scanner(new FileInputStream(fileName));
         }
         catch(Exception e) {
-            System.out.println("file not found");
+            System.out.println("File Not Found");
             return;
         }
-        int lineNumber = 1;
 
+//        loop to go through the file and read the words
+        int lineNumber = 1;
         while(inputStream.hasNextLine()) {
             String line = inputStream.nextLine();
             String[] splitWords = line.split(" ");

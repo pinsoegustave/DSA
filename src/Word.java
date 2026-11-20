@@ -1,3 +1,11 @@
+//************************************************************
+//                     Pinsoe Gustave
+//                       Program #7
+//                     Due 11/19/2026
+//  This file creates are a hash table as an array to store
+//          the line numbers where the word occurs.
+//************************************************************
+
 import java.util.LinkedList;
 
 public class Word implements Comparable<Word> {
@@ -9,14 +17,10 @@ public class Word implements Comparable<Word> {
         word = argWord;
         lines = new LinkedList<>();
         lines.add(argLine);
-//        lines = argLine + " ";
     }
 
     public void addLine(int argLine) {
-//        lines = lines + argLine + " ";
-//        if (lines.getLast() != argLine) {
             lines.add(argLine);
-//        }
     }
 
     public int compareTo(Word nextWord) {
